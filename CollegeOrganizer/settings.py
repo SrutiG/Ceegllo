@@ -69,6 +69,11 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/var/www/static/',
+]
+
 WSGI_APPLICATION = 'CollegeOrganizer.wsgi.application'
 
 

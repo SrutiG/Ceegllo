@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang = "en">
+<head>
+
+    <meta charset='utf-8'>
+    <title>College Organizer</title>
+    <meta name = 'description' content = "Organize your college schedule">
+    <meta name = 'author' content = "Sruti Guhathakurta">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'gpacalc/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'gpacalc/css/index.css' %}"/>
+
+    {% block extrastyle %} {% endblock %}
+
+    <script type="text/javascript" src="{% static 'gpacalc/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gpacalc/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'gpacalc/js/index.js' %}"></script>
+
+    {% block extrascript %}{% endblock %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body {% block class %} {%endblock %}>
+{% block content %}
+{% endblock %}
+</body>
+
+</html>

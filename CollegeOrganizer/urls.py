@@ -19,5 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^gpacalc/', include('gpacalc.urls')),
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('gpacalc.urls')),
+    url(r'^$', include('gpacalc.urls')),
 ]
