@@ -7,3 +7,11 @@ $(document).ready(function() {
 
 });
 
+function editCollege(){
+        window.location="../editcollege";
+    }
+
+function goBack() {
+    window.history.back();
+}
+

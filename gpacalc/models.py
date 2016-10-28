@@ -5,6 +5,8 @@ from django.db import models
 
 class College(models.Model):
     collegename = models.CharField(max_length=200, primary_key = True)
+    def __str__(self):
+        return self.collegename
 
 class Student(models.Model):
     YEAR_CHOICES = (("FR","Freshman"), ("SO","Sophomore"), ("JU","Junior"), ("SE","Senior+"))
@@ -42,19 +44,30 @@ class Semester(models.Model):
     season = models.CharField(choices = SEASON_CHOICES, max_length=2)
     year = models.CharField(max_length=4)
 
+    def __str__(self):
+        return self.season + " " + self.year
+
 class Class(models.Model):
     name = models.CharField(max_length=20, primary_key=True, null=False)
     credits = models.CharField(max_length=10)
+    collegename = models.ForeignKey(College, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return self.name
 
 class Grade(models.Model):
     GRADE_CHOICES = ((4.0,"A"), (3.0,"B"), (2.0,"C"), (1.0,"D"), (0.0,"F"))
     grade = models.DecimalField(choices=GRADE_CHOICES, max_digits=2, decimal_places=1)
+    def __str__(self):
+        return str(self.grade)
 
 class CollegeOrganizer(models.Model):
     class Meta:
         unique_together = (('username', 'collegename', 'semestername', 'classname'),)
-    username = models.OneToOneField(Student, on_delete=models.PROTECT)
-    collegename = models.OneToOneField(College, on_delete=models.PROTECT)
-    semestername = models.OneToOneField(Semester, on_delete=models.PROTECT)
-    classname = models.OneToOneField(Class, on_delete=models.PROTECT)
-    grade = models.OneToOneField(Grade, on_delete=models.PROTECT, null=True)
+    username = models.ForeignKey(Student, on_delete=models.PROTECT)
+    collegename = models.ForeignKey(College, on_delete=models.PROTECT)
+    semestername = models.ForeignKey(Semester, on_delete=models.PROTECT)
+    classname = models.ForeignKey(Class, on_delete=models.PROTECT)
+    grade = models.ForeignKey(Grade, null=True, blank=True, on_delete=models.PROTECT)
+    def __str__(self):
+        return str(self.username) + " " + str(self.classname) + " " + str(self.grade)

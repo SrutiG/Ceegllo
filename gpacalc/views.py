@@ -10,8 +10,7 @@ def index(request):
     if not request.session.get('login'):
         return redirect('login')
     else:
-        username = request.session.get('username')
-        return redirect('home', {'username', username})
+        return redirect('home')
 
 def login(request):
     request.session['login'] = False
@@ -46,3 +45,7 @@ def register(request):
                                          username = username, password = password)
         return redirect('login')
     return render(request, 'gpacalc/register.html', {'yearchoices':yearchoices})
+
+def editcollege(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/editcollege.html', {'username': username})

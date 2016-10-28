@@ -1,0 +1,23 @@
+{% extends 'gpacalc/layout.html' %}
+
+{%block content %}
+<div class="jumbotron text-center">
+    {% if college %}
+        <h1>{{ college }}</h1>
+    {% else %}
+        <button type="button" class="btn-lg btn btn-default">+Add College</button>
+    {% endif %}
+    {% if semesters %}
+        {%for semester in semesters %}
+            <div class="semester">
+                <h1>{{ semester }}</h1>
+            </div>
+        {% endfor %}
+    {% else %}
+        <button type="button" class="btn-lg btn btn-default">+Add Semester</button>
+    {% endif %}
+    <button type="button" onclick="goBack()" class="btn btn-default">Back</button>
+</div>
+{% endblock %}
+
+</html>
