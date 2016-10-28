@@ -6,7 +6,7 @@ class Student(models.Model):
     YEAR_CHOICES = (("FR","Freshman"), ("SO","Sophomore"), ("JU","Junior"), ("SE","Senior+"))
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
-    gpa = models.CharField(max_length=3, null=True)
+    gpa = models.CharField(max_length=3, null=False)
     password = models.CharField(max_length=20)
     username = models.CharField(max_length=20, primary_key = True)
     year = models.CharField(choices = YEAR_CHOICES, max_length=2)
