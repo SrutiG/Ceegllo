@@ -4,6 +4,8 @@ $(document).ready(function() {
         parent.history.back();
         return false;
     });
+    $(".dropdown-toggle").dropdown();
+
 
 });
 

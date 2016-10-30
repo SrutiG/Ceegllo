@@ -1,6 +1,28 @@
 {% extends 'gpacalc/layout.html' %}
 
 {%block content %}
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand col" href="{% url 'home' %}">College Organizer</a>
+        </div>
+        <div class="navbar-collapse navbar-toggleable-xs" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item active"><a class="col" href="{% url 'editcollege' %}">College Info</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ username }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Edit Profile</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{% url 'login' %}">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class="jumbotron text-center">
     {% if college %}
         <h1>{{ college }}</h1>

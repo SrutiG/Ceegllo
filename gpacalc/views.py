@@ -30,8 +30,9 @@ def login(request):
 def home(request):
     username = request.session.get('username')
     user = Student.objects.get(username=username)
+    college = user.collegename
     name = Student.__str__(user)
-    return render(request, 'gpacalc/home.html', {'username': username, 'name': name})
+    return render(request, 'gpacalc/home.html', {'username': username, 'name': name, 'college' : college})
 
 def register(request):
     yearchoices = Student.YEAR_CHOICES
