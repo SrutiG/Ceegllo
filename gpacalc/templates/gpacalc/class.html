@@ -1,0 +1,138 @@
+{% extends 'gpacalc/layout.html' %}
+
+{%block content %}
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand col" href="{% url 'home' %}">College Organizer</a>
+        </div>
+        <div class="navbar-collapse navbar-toggleable-xs" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item active">
+                    <a class="dropdown-toggle" href="{% url 'editcollege' %}"data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">College Info<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'editcollege' %}">Past Semesters</a></li>
+                        <li><a href="{% url 'editfuture' %}">Future Plan</a></li>
+                        <li><a href="{% url 'currentclasses' %}">Current Semester</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ username }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'editprofile' %}">Edit Profile</a></li>
+                        <li><a href="{% url 'settings' %}">Settings</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{% url 'login' %}">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="jumbotron">
+    <div>
+        <button class="btn btn-default btn-lg" type="button" onclick="goBack()">Back</button>
+    </div>
+    <div class="container text-center">
+        <div class="col-md-12">
+            <h1>CS 2340</h1>
+            <h2>Projected Grade: 90.5% A</h2>
+        </div>
+        <div class="container" style="margin-top: 50px;">
+            <div class="col-md-4">
+                <form class="form container">
+                    <div class="form-group row">
+                        <h5 class="form-control-inline" style="width:12ch; display: inline-block;">Category</h5>
+                        <h5 class="form-control-inline" style="width:12ch; display: inline-block;">Weight</h5>
+                        <h5 class="form-control-inline" style="width:12ch; display: inline-block;">Grade</h5>
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control form-control-inline" value="Midterms" style="width:12ch; display: inline-block;">
+                        <input class="form-control form-control-inline" value="0.6" style="width:12ch; display: inline-block;">
+                        <label class="form-control-inline" style="width:12ch; display: inline-block;">89.7</label>
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control form-control-inline" value="Homework" style="width:12ch; display: inline-block;">
+                        <input class="form-control form-control-inline" value="0.2" style="width:12ch; display: inline-block;">
+                        <label class="form-control-inline" style="width:12ch; display: inline-block;">92.3</label>
+                    </div>
+                    <div class="form-group row">
+                        <input class="form-control form-control-inline" value="Final" style="width:12ch; display: inline-block;">
+                        <input class="form-control form-control-inline" value="0.2" style="width:12ch; display: inline-block;">
+                        <label class="form-control-inline" style="width:12ch; display: inline-block;">None</label>
+                    </div>
+                    <div class="form-group row">
+                        <button type="button" class="btn btn-default" style="width:37ch;">Add Category</button>
+                    </div>
+                </form>
+                <form class="form container">
+                    <h4>Final Exam Scenarios</h4>
+                    <div class="form-group row">
+                        <label class="form-control form-control-inline" style="width:20ch; display: inline-block;">A</label>
+                        <label class="form-control form-control-inline" style="width:20ch; display: inline-block;">91.8</label>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-control form-control-inline" style="width:20ch; display: inline-block;">B</label>
+                        <label class="form-control form-control-inline" style="width:20ch; display: inline-block;">78.5</label>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-control form-control-inline" style="width:20ch; display: inline-block;">C</label>
+                        <label class="form-control form-control-inline" style="width:20ch; display: inline-block;">55.2</label>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-8">
+                <div class="col-md-6">
+                    <h3>Midterms</h3>
+                    <form class="form container">
+                        <div class="form-group row">
+                            <h5 style="width:10ch; display: inline-block">Grade</h5>
+                            <h5 style="width:10ch; display: inline-block">Weight</h5>
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control form-control-inline" type="text" value="98.6" style="width:10ch; display: inline-block;">
+                            <input class="form-control form-control-inline" type="text" value="1" style="width:10ch; display: inline-block;">
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control form-control-inline" type="text" value="85.2" style="width:10ch; display: inline-block;">
+                            <input class="form-control form-control-inline" type="text" value="0.7" style="width:10ch; display: inline-block;">
+                        </div>
+                        <div class="form-group row">
+                            <button class="btn btn-default form-control form-control-inline" type="button" style="width:21ch; display:inline-block;">+Add</button>
+                        </div>
+                        <div class="form-group row">
+                            <button class="btn btn-primary form-control form-control-inline" type="button" style="width:10ch; display:inline-block;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <h3>Homework</h3>
+                    <form class="form container">
+                        <div class="form-group row">
+                            <h5 style="width:10ch; display: inline-block">Grade</h5>
+                            <h5 style="width:10ch; display: inline-block">Weight</h5>
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control form-control-inline" type="text" value="100.0" style="width:10ch; display: inline-block;">
+                            <input class="form-control form-control-inline" type="text" value="1" style="width:10ch; display: inline-block;">
+                        </div>
+                        <div class="form-group row">
+                            <input class="form-control form-control-inline" type="text" value="94.5" style="width:10ch; display: inline-block;">
+                            <input class="form-control form-control-inline" type="text" value="0.5" style="width:10ch; display: inline-block;">
+                        </div>
+                        <div class="form-group row">
+                            <button class="btn btn-default form-control form-control-inline" type="button" style="width:21ch; display:inline-block;">+Add</button>
+                        </div>
+                        <div class="form-group row">
+                            <button class="btn btn-primary form-control form-control-inline" type="button" style="width:10ch; display:inline-block;">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+</html>

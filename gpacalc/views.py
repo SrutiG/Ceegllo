@@ -10,8 +10,7 @@ def index(request):
     if not request.session.get('login'):
         return redirect('login')
     else:
-        username = request.session.get('username')
-        return redirect('home', {'username', username})
+        return redirect('home')
 
 def login(request):
     request.session['login'] = False
@@ -30,7 +29,10 @@ def login(request):
 
 def home(request):
     username = request.session.get('username')
-    return render(request, 'gpacalc/home.html', {'username': username})
+    user = Student.objects.get(username=username)
+    college = user.collegename
+    name = Student.__str__(user)
+    return render(request, 'gpacalc/home.html', {'username': username, 'name': name, 'college' : college})
 
 def register(request):
     yearchoices = Student.YEAR_CHOICES
@@ -44,3 +46,28 @@ def register(request):
                                          username = username, password = password)
         return redirect('login')
     return render(request, 'gpacalc/register.html', {'yearchoices':yearchoices})
+
+def editcollege(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/editcollege.html', {'username': username})
+
+def editprofile(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/editprofile.html', {'username': username})
+
+def editfuture(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/editfuture.html', {'username': username})
+
+def currentclasses(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/currentclasses.html', {'username': username})
+
+def currentclass(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/class.html', {'username': username})
+
+def settings(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/settings.html', {'username': username})
+

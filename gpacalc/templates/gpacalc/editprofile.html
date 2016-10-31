@@ -1,0 +1,73 @@
+{% extends 'gpacalc/layout.html' %}
+
+{%block content %}
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand col" href="{% url 'home' %}">College Organizer</a>
+        </div>
+        <div class="navbar-collapse navbar-toggleable-xs" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item">
+                    <a class="dropdown-toggle" href="{% url 'editcollege' %}"data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">College Info<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'editcollege' %}">Past Semesters</a></li>
+                        <li><a href="{% url 'editfuture' %}">Future Plan</a></li>
+                        <li><a href="{% url 'currentclasses' %}">Current Semester</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item active dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ username }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'editprofile' %}">Edit Profile</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="{% url 'login' %}">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="jumbotron container col-sm-8 col-sm-offset-2">
+    <form class="col-md-8 container vertical-center" method="post">
+        <label for="studentName"><h3>Student Name: </h3></label>
+        <div class="form-group row">
+            <input  class = "input-lg col-md-10" id = "studentName" type="text" name = "studentName" value="Sruti Guhathakurta">
+        </div>
+        <label for="college">College: </label>
+        <div class="form-group row">
+            <input class="form-control" id="college" name="college" value="Georgia Institute of Technology" style="width:30ch; display: inline-block;">
+        </div>
+        <label for="year">Year: </label>
+        <div class="form-group row">
+            <select class="form-control" id="year" name="year" style="width:30ch;  display: inline-block;">
+                <option value="Freshman">Freshman</option>
+                <option value="Sophomore">Sophomore</option>
+                <option selected value="Junior">Junior</option>
+                <option value="Senior+">Senior+</option>
+            </select>
+        </div>
+        <label for="studentDescription">Description: </label>
+        <div class="form-group row">
+            <textarea class = "col-md-10" id="studentDescription" rows = "5" name = "studentDescription" placeholder="Enter Description"></textarea>
+
+        </div>
+        <div class="form-group row">
+            <button class="btn btn-default btn-lg col-md-4" name="studentSubmit" type="submit">Submit</button>
+        </div>
+    </form>
+    <div class="col-md-4 container profile-div">
+        {% load static %}
+        <div class="edit-pic center-block">
+            <a href="#"><img class="img" src="{% static 'gpacalc/images/detaultprofile.png' %}"></a>
+        </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock %}
+
+</html>
