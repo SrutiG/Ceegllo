@@ -67,3 +67,7 @@ def currentclass(request):
     username = request.session.get('username')
     return render(request, 'gpacalc/class.html', {'username': username})
 
+def settings(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/settings.html', {'username': username})
+

@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^editprofile/', views.editprofile, name='editprofile'),
     url(r'^editfuture/', views.editfuture, name='editfuture'),
     url(r'^currentclasses/', views.currentclasses, name='currentclasses'),
-    url(r'^class/', views.currentclass, name='class')
+    url(r'^class/', views.currentclass, name='class'),
+    url(r'^settings/', views.settings, name='settings')
 ]

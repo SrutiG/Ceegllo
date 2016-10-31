@@ -12,7 +12,7 @@
                 <li class="nav-item">
                     <a class="dropdown-toggle" href="{% url 'editcollege' %}"data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">College Info<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{% url 'editcollege' %}">Past and Current</a></li>
+                        <li><a href="{% url 'editcollege' %}">Past Semesters</a></li>
                         <li><a href="{% url 'editfuture' %}">Future Plan</a></li>
                         <li><a href="{% url 'currentclasses' %}">Current Semester</a></li>
                     </ul>
@@ -21,7 +21,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ username }}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{% url 'editprofile' %}">Edit Profile</a></li>
-                        <li><a href="#">Settings</a></li>
+                        <li><a href="{% url 'settings' %}">Settings</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{% url 'login' %}">Logout</a></li>
                     </ul>
