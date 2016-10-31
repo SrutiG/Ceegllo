@@ -50,3 +50,20 @@ def register(request):
 def editcollege(request):
     username = request.session.get('username')
     return render(request, 'gpacalc/editcollege.html', {'username': username})
+
+def editprofile(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/editprofile.html', {'username': username})
+
+def editfuture(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/editfuture.html', {'username': username})
+
+def currentclasses(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/currentclasses.html', {'username': username})
+
+def currentclass(request):
+    username = request.session.get('username')
+    return render(request, 'gpacalc/class.html', {'username': username})
+

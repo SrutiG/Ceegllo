@@ -9,11 +9,18 @@
         <div class="navbar-collapse navbar-toggleable-xs" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
-                <li class="nav-item active"><a class="col" href="{% url 'editcollege' %}">College Info</a></li>
+                <li class="nav-item active">
+                    <a class="dropdown-toggle" href="{% url 'editcollege' %}"data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">College Info<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'editcollege' %}">Past Semesters</a></li>
+                        <li><a href="{% url 'editfuture' %}">Future Plan</a></li>
+                        <li><a href="{% url 'currentclasses' %}">Current Semester</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ username }}<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Edit Profile</a></li>
+                        <li><a href="{% url 'editprofile' %}">Edit Profile</a></li>
                         <li><a href="#">Settings</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="{% url 'login' %}">Logout</a></li>
@@ -24,21 +31,177 @@
     </div>
 </nav>
 <div class="jumbotron text-center">
-    {% if college %}
-        <h1>{{ college }}</h1>
-    {% else %}
-        <button type="button" class="btn-lg btn btn-default">+Add College</button>
-    {% endif %}
-    {% if semesters %}
-        {%for semester in semesters %}
-            <div class="semester">
-                <h1>{{ semester }}</h1>
+    <div class="container">
+        <h1 style="margin-bottom: 30px;">Past Semesters</h1>
+        <form class="form container">
+            <div class="container semester">
+                <h3 class="form-header">Fall 2014</h3>
+                <form class="form">
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="CS 1301" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="C" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="CHEM 1310" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="4" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="B" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="MATH 1502" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="4" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="B" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="GT 1000" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="1" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="A" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row add-class">
+                        <button type="button" class="form-control btn btn-default" style="width:61ch;">Add Class</button>
+                    </div>
+                    <div class="form-group row">
+                        <button type="submit" class="form-control btn btn-primary" style="width:25ch;">Submit</button>
+                    </div>
+                </form>
             </div>
-        {% endfor %}
-    {% else %}
-        <button type="button" class="btn-lg btn btn-default">+Add Semester</button>
-    {% endif %}
-    <button type="button" onclick="goBack()" class="btn btn-default">Back</button>
+            <div class="container semester">
+                <h3 class="form-header">Spring 2015</h3>
+                <form class="form">
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="ISYE 2027" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="C" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="BIOL 1510" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="4" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="C" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="ENGL 1102" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="A" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row add-class">
+                        <button type="button" class="form-control btn btn-default" style="width:61ch;">Add Class</button>
+                    </div>
+                    <div class="form-group row">
+                        <button type="submit" class="form-control btn btn-primary" style="width:25ch;">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="container semester">
+                <h3 class="form-header">Summer 2015</h3>
+                <form class="form">
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="PHYS 2211" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="4" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="A" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="MATH 2401" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="4" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="A" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row add-class">
+                        <button type="button" class="form-control btn btn-default" style="width:61ch;">Add Class</button>
+                    </div>
+                    <div class="form-group row">
+                        <button type="submit" class="form-control btn btn-primary" style="width:25ch;">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="container semester">
+                <h3 class="form-header">Fall 2015</h3>
+                <form class="form">
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="MGT 3000" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="A" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="ISYE 2028" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="B" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="ISYE 3232" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="B" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="CS 2316" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="B" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row add-class">
+                        <button type="button" class="form-control btn btn-default" style="width:61ch;">Add Class</button>
+                    </div>
+                    <div class="form-group row">
+                        <button type="submit" class="form-control btn btn-primary" style="width:25ch;">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="container semester">
+                <h3 class="form-header">Spring 2016</h3>
+                <form class="form">
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="GRMN 2002" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="N" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="ISYE 3044" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="B" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="CS 1331" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="A" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="MATH 2603" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="4" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="A" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row add-class">
+                        <button type="button" class="form-control btn btn-default" style="width:61ch;">Add Class</button>
+                    </div>
+                    <div class="form-group row">
+                        <button type="submit" class="form-control btn btn-primary" style="width:25ch;">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div class="container semester">
+                <h3 class="form-header">Summer 2016</h3>
+                <form class="form">
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="GRMN 4691" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="B" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="GRMN 3690" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="B" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row">
+                        <input type="text" class="form-control form-control-inline" value="GRMN 4640" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline" value="B" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row add-class">
+                        <button type="button" class="form-control btn btn-default" style="width:61ch;">Add Class</button>
+                    </div>
+                    <div class="form-group row">
+                        <button type="submit" class="form-control btn btn-primary" style="width:25ch;">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
 
