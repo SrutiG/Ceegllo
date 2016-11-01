@@ -1,3 +1,3 @@
 # Ceegllo
 
-#Track your progress in college
+Track your progress in college
