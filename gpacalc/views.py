@@ -49,7 +49,10 @@ def register(request):
 
 def editcollege(request):
     username = request.session.get('username')
-    return render(request, 'gpacalc/editcollege.html', {'username': username})
+    user = Student.objects.get(username=username)
+    semesters = Student.getPastSemesters(user)
+    print(semesters)
+    return render(request, 'gpacalc/editcollege.html', {'username': username, 'semesters': semesters})
 
 def editprofile(request):
     username = request.session.get('username')
@@ -57,7 +60,9 @@ def editprofile(request):
 
 def editfuture(request):
     username = request.session.get('username')
-    return render(request, 'gpacalc/editfuture.html', {'username': username})
+    user = Student.objects.get(username=username)
+    semesters=Student.getFutureSemesters(user)
+    return render(request, 'gpacalc/editfuture.html', {'username': username, 'semesters': semesters})
 
 def currentclasses(request):
     username = request.session.get('username')

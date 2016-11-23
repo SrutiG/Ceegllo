@@ -2,6 +2,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+import datetime
+
 
 class College(models.Model):
     collegename = models.CharField(max_length=200, primary_key = True)
@@ -22,10 +24,10 @@ class Student(models.Model):
         return self.first_name + " " + self.last_name
 
     def calculateGPA(self):
-        vals = CollegeOrganizer.objects.get(username=self.username, collegename = self.collegename)
+        vals = PastSemester.objects.get(username=self.username, collegename = self.collegename)
         classnames = vals.objects.values_list('classname')
         grades = vals.objects.values_list('grade')
-        classes = classnames.objects.all().select_related("class")
+        classes = classnames.objects.all().select_related("Class")
         credits = []
         for object in classes:
             credits.append(object.credits)
@@ -35,6 +37,42 @@ class Student(models.Model):
             credsxgrades = credsxgrades + (grades[x][0]*credits[x])
         gpa = credsxgrades/totalcredits
         return gpa
+
+    def getPastSemesters(self):
+        semesters = {}
+        sem = PastSemester.objects.get(username=self.username, collegename=self.collegename)
+        semesterObjects = sem.objects.all().select_related("Semester")
+        for semester in semesterObjects:
+            semesters[semester.__str__] = []
+            classes = PastSemester.objects.filter(username=self.username, collegename=self.collegename, semestername = semester)
+            classObjects = classes.objects.all().select_related("Class")
+            for object in classObjects:
+                semesters[semester].append((object.name, object.credits, classes.grade))
+        return semesters
+
+    def getFutureSemesters(self):
+        semesters = {}
+        sem = FutureSemester.objects.filter(username=self.username, collegename=self.collegename)
+        semesterObjects = sem.objects.all().select_related("Semester")
+        for semester in semesterObjects:
+            semesters[semester.__str__] = []
+            classes = FutureSemester.objects.get(username=self.username, collegename=self.collegename, semestername = semester)
+            classObjects = classes.objects.all().select_related("Class")
+            for object in classObjects:
+                semesters[semester].append((object.name, object.credits))
+        return semesters
+
+    def getCurrentSemester(self):
+        semester = {}
+        sem = CurrentSemester.objects.get(username=self.username, collegename=self.collegename)
+        semesterObjects = sem.objects.all().select_related("Semester")
+        semester[semesterObjects.__str__] = []
+        classes = CurrentSemester.objects.get(username=self.username, collegename=self.collegename, semestername = semesterObjects)
+        classObjects = classes.objects.all().select_related("Class")
+        for object in classObjects:
+            semester[semesterObjects.__str__].append((object.name, object.credits))
+        return semester
+
 
 
 class Semester(models.Model):
@@ -61,7 +99,7 @@ class Grade(models.Model):
     def __str__(self):
         return str(self.grade)
 
-class CollegeOrganizer(models.Model):
+class PastSemester(models.Model):
     class Meta:
         unique_together = (('username', 'collegename', 'semestername', 'classname'),)
     username = models.ForeignKey(Student, on_delete=models.PROTECT)
@@ -71,3 +109,22 @@ class CollegeOrganizer(models.Model):
     grade = models.ForeignKey(Grade, null=True, blank=True, on_delete=models.PROTECT)
     def __str__(self):
         return str(self.username) + " " + str(self.classname) + " " + str(self.grade)
+
+class CurrentSemester(models.Model):
+    username = models.ForeignKey(Student, on_delete=models.PROTECT, primary_key=True)
+    collegename = models.ForeignKey(College, on_delete=models.PROTECT)
+    semestername = models.ForeignKey(Semester, on_delete=models.PROTECT)
+    classname = models.ForeignKey(Class, on_delete=models.PROTECT)
+    grade = models.ForeignKey(Grade, null=True, blank=True, on_delete=models.PROTECT)
+    def __str__(self):
+        return str(self.username) + " " + str(self.classname) + " " + str(self.grade)
+
+class FutureSemester(models.Model):
+    class Meta:
+        unique_together = (('username', 'collegename', 'semestername', 'classname'),)
+    username = models.ForeignKey(Student, on_delete=models.PROTECT)
+    collegename = models.ForeignKey(College, on_delete=models.PROTECT)
+    semestername = models.ForeignKey(Semester, on_delete=models.PROTECT)
+    classname = models.ForeignKey(Class, on_delete=models.PROTECT)
+    def __str__(self):
+        return str(self.username) + " " + str(self.classname)
