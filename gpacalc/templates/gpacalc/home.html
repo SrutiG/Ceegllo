@@ -4,7 +4,7 @@
 <nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand col" href="{% url 'home' %}">College Organizer</a>
+            <a class="navbar-brand col" href="{% url 'home' %}">Ceegllo</a>
         </div>
         <div class="navbar-collapse navbar-toggleable-xs" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -36,6 +36,9 @@
         <h2>{{ college }}</h2>
     {% else %}
         <button class="btn btn-lg btn-default edit-college" type="button" onclick="editCollege()">Add College Information</button>
+    {% endif %}
+    {% if gpa %}
+        <h3>GPA: {{ gpa }}</h3>
     {% endif %}
 </div>
 {% endblock %}
