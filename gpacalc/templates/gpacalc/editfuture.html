@@ -34,6 +34,36 @@
     <div class="container">
         <h1>Future Plan</h1>
         <form class="form container">
+            <div class="container semester-future semester-future-template" style="display: none;">
+                <div class="form-group row">
+                    <select class="form-control form-control-inline season" style="width:15ch; display: inline-block;" name="season">
+                        <option>Fall</option>
+                        <option>Spring</option>
+                        <option>Summer</option>
+                    </select>
+                    <input type="text" class="form-control form-control-inline year" style="width:15ch; display: inline-block;" name="year" placeholder="Year">
+                </div>
+                <form class="form future-form">
+                    <div class="form-group row class-future">
+                        <input type="text" class="form-control form-control-inline class-name" placeholder = "Class Name" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline cred" placeholder = "Credits" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row class-future">
+                        <input type="text" class="form-control form-control-inline class-name" placeholder = "Class Name" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline cred" placeholder = "Credits" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row class-future">
+                        <input type="text" class="form-control form-control-inline class-name" placeholder = "Class Name" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline cred" placeholder = "Credits" style="width:15ch; display: inline-block;">
+                    </div>
+                    <div class="form-group row add-class">
+                        <button type="button" class="form-control btn btn-default" style="width:46ch;">Add Class</button>
+                    </div>
+                    <div class="form-group row">
+                        <button type="submit" class="form-control btn btn-primary" style="width:20ch;">Submit</button>
+                    </div>
+                </form>
+            </div>
             {% for key, values in semesters.items %}
             <div class="container semester-future">
                 <h3 class="form-header">{{ key }}</h3>
@@ -53,6 +83,8 @@
                 </form>
             </div>
             {% endfor %}
+            <button type="button" class="form-control btn btn-outline-primary" id="addFutureSemester" style="width:50ch; display: inline-block;">+ Add Semester</button>
+
         </form>
     </div>
 </div>

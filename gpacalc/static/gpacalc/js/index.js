@@ -25,9 +25,14 @@ $(document).ready(function() {
                 $(this).prev().children(".grade").attr("placeholder", "Grade");
     });
     $("#addSemester").click(function() {
-        console.log("clicked");
         var newDiv = $(".semester-template")[0].outerHTML;
-        $(".semester").append(newDiv);
+        $(this).before(newDiv);
+        $(".semester-template:last").removeAttr("style");
+    })
+    $("#addFutureSemester").click(function() {
+        var newDiv = $(".semester-future-template")[0].outerHTML;
+        $(this).before(newDiv);
+        $(".semester-future-template:last").removeAttr("style");
     })
 
 });

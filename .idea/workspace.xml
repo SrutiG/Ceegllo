@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="286d6c03-f781-4c53-8f84-1cde153526a9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/gpacalc/migrations/0001_initial.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpacalc/models.py" afterPath="$PROJECT_DIR$/gpacalc/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpacalc/static/gpacalc/js/index.js" afterPath="$PROJECT_DIR$/gpacalc/static/gpacalc/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpacalc/templates/gpacalc/currentclasses.html" afterPath="$PROJECT_DIR$/gpacalc/templates/gpacalc/currentclasses.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpacalc/templates/gpacalc/editcollege.html" afterPath="$PROJECT_DIR$/gpacalc/templates/gpacalc/editcollege.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpacalc/templates/gpacalc/editfuture.html" afterPath="$PROJECT_DIR$/gpacalc/templates/gpacalc/editfuture.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpacalc/templates/gpacalc/home.html" afterPath="$PROJECT_DIR$/gpacalc/templates/gpacalc/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpacalc/views.py" afterPath="$PROJECT_DIR$/gpacalc/views.py" />
     </list>
     <ignored path="testDjangoProj.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,9 +38,20 @@
       <file leaf-file-name="editfuture.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/editfuture.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="417">
+              <caret line="85" column="92" selection-start-line="85" selection-start-column="92" selection-end-line="85" selection-end-column="92" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#0;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#1;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#2;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,8 +73,8 @@
       <file leaf-file-name="editcollege.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/editcollege.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="89" column="94" selection-start-line="89" selection-start-column="94" selection-end-line="89" selection-end-column="94" />
+            <state relative-caret-position="402">
+              <caret line="89" column="19" selection-start-line="89" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -96,8 +99,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpacalc/static/gpacalc/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+            <state relative-caret-position="405">
+              <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -189,12 +192,12 @@
         <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/layout.html" />
         <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/editprofile.html" />
         <option value="$PROJECT_DIR$/gpacalc/admin.py" />
-        <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/editfuture.html" />
         <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/currentclasses.html" />
         <option value="$PROJECT_DIR$/gpacalc/models.py" />
         <option value="$PROJECT_DIR$/gpacalc/views.py" />
         <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/home.html" />
         <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/editcollege.html" />
+        <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/editfuture.html" />
         <option value="$PROJECT_DIR$/gpacalc/static/gpacalc/js/index.js" />
       </list>
     </option>
@@ -1266,14 +1269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/editfuture.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="54" column="24" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/currentclasses.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -1316,8 +1311,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/editcollege.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="89" column="94" selection-start-line="89" selection-start-column="94" selection-end-line="89" selection-end-column="94" />
+        <state relative-caret-position="402">
+          <caret line="89" column="19" selection-start-line="89" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1338,10 +1333,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/editfuture.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="85" column="92" selection-start-line="85" selection-start-column="92" selection-end-line="85" selection-end-column="92" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#1;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#2;n#form#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gpacalc/static/gpacalc/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+        <state relative-caret-position="405">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
           <folding />
         </state>
       </provider>
