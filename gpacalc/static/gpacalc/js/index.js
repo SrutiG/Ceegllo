@@ -24,6 +24,11 @@ $(document).ready(function() {
                 $(this).prev().children(".cred").attr("placeholder", "Credits");
                 $(this).prev().children(".grade").attr("placeholder", "Grade");
     });
+    $("#addSemester").click(function() {
+        console.log("clicked");
+        var newDiv = $(".semester-template")[0].outerHTML;
+        $(".semester").append(newDiv);
+    })
 
 });
 

@@ -37,6 +37,9 @@
     {% else %}
         <button class="btn btn-lg btn-default edit-college" type="button" onclick="editCollege()">Add College Information</button>
     {% endif %}
+    {% if gpa %}
+        <h3>GPA: {{ gpa }}</h3>
+    {% endif %}
 </div>
 {% endblock %}
 

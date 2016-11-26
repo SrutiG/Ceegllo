@@ -33,6 +33,34 @@
 <div class="jumbotron text-center">
     <div class="container">
         <h1>Current Semester</h1>
+        <h4>Current GPA: {{ gpa }}</h4>
+        <h4>Projected GPA: 3.00</h4>
+        {% for key, values in semester.items %}
+        <div class="container semester">
+            <h3 class="form-header">Fall 2016</h3>
+            <form class="form">
+                <div class="form-group row">
+                    <label class="form-control-inline" style="width:30ch; display: inline-block;">Class</label>
+                    <label class="form-control-inline" style="width:15ch; display: inline-block;">Credits</label>
+                    <label class="form-control-inline" style="width:15ch; display: inline-block;">Proj. Grade</label>
+                </div>
+                {% for item in values %}
+                <div class="form-group row">
+                    <input type="text" class="form-control form-control-inline" value="{{ item.0 }}" style="width:30ch; display: inline-block;">
+                    <input type="text" class="form-control form-control-inline" value="{{ item.1 }}" style="width:15ch; display: inline-block;">
+                    <label class="form-control-inline" style="width:15ch; display: inline-block;"><a href="{% url 'class' %}">A</a></label>
+                </div>
+                {% endfor %}
+                <div class="form-group row add-class">
+                    <button type="button" class="form-control btn btn-default" style="width:61ch;">Add Class</button>
+                </div>
+                <div class="form-group row">
+                    <button type="submit" class="form-control btn btn-primary" style="width:25ch;">Submit</button>
+                </div>
+            </form>
+        </div>
+        {% endfor %}
+        <h1>Current Semester</h1>
         <h4>Current GPA: 3.13</h4>
         <h4>Projected GPA: 3.00</h4>
         <div class="container semester">

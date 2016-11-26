@@ -34,29 +34,16 @@
     <div class="container">
         <h1>Future Plan</h1>
         <form class="form container">
+            {% for key, values in semesters.items %}
             <div class="container semester-future">
-                <h3 class="form-header">Spring 2017</h3>
+                <h3 class="form-header">{{ key }}</h3>
                 <form class="form future-form">
+                    {% for item in values %}
                     <div class="form-group row class-future">
-                        <input type="text" class="form-control form-control-inline class-name" value="CS 1332" style="width:30ch; display: inline-block;">
-                        <input type="text" class="form-control form-control-inline cred" value="3" style="width:15ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline class-name" value="{{ item.0 }}" style="width:30ch; display: inline-block;">
+                        <input type="text" class="form-control form-control-inline cred" value="{{ item.1 }}" style="width:15ch; display: inline-block;">
                     </div>
-                    <div class="form-group row class-future">
-                        <input type="text" class="form-control form-control-inline class-name" value="CS 2110" style="width:30ch; display: inline-block;">
-                        <input type="text" class="form-control form-control-inline cred" value="4" style="width:15ch; display: inline-block;">
-                    </div>
-                    <div class="form-group row class-future">
-                        <input type="text" class="form-control form-control-inline class-name" value="CS 4641" style="width:30ch; display: inline-block;">
-                        <input type="text" class="form-control form-control-inline cred" value="3" style="width:15ch; display: inline-block;">
-                    </div>
-                    <div class="form-group row class-future">
-                        <input type="text" class="form-control form-control-inline class-name" value="CS 1100" style="width:30ch; display: inline-block;">
-                        <input type="text" class="form-control form-control-inline cred" value="1" style="width:15ch; display: inline-block;">
-                    </div>
-                    <div class="form-group row class-future">
-                        <input type="text" class="form-control form-control-inline class-name" value="VIP" style="width:30ch; display: inline-block;">
-                        <input type="text" class="form-control form-control-inline cred" value="1" style="width:15ch; display: inline-block;">
-                    </div>
+                    {% endfor %}
                     <div class="form-group row add-class">
                         <button type="button" class="form-control btn btn-default" style="width:46ch;">Add Class</button>
                     </div>
@@ -65,33 +52,7 @@
                     </div>
                 </form>
             </div>
-            <div class="container semester-future">
-                <h3 class="form-header">Fall 2017</h3>
-                <form class="form future-form">
-                    <div class="form-group row class-future">
-                        <input type="text" class="form-control form-control-inline class-name" value="CS 2200" style="width:30ch; display: inline-block;">
-                        <input type="text" class="form-control form-control-inline cred" value="4" style="width:15ch; display: inline-block;">
-                    </div>
-                    <div class="form-group row class-future">
-                        <input type="text" class="form-control form-control-inline class-name" value="CS 3600" style="width:30ch; display: inline-block;">
-                        <input type="text" class="form-control form-control-inline cred" value="3" style="width:15ch; display: inline-block;">
-                    </div>
-                    <div class="form-group row class-future">
-                        <input type="text" class="form-control form-control-inline class-name" value="CS 3510" style="width:30ch; display: inline-block;">
-                        <input type="text" class="form-control form-control-inline cred" value="3" style="width:15ch; display: inline-block;">
-                    </div>
-                    <div class="form-group row class-future">
-                        <input type="text" class="form-control form-control-inline class-name" value="VIP" style="width:30ch; display: inline-block;">
-                        <input type="text" class="form-control form-control-inline cred" value="2" style="width:15ch; display: inline-block;">
-                    </div>
-                    <div class="form-group row add-class">
-                        <button type="button" class="form-control btn btn-default" style="width:46ch;">Add Class</button>
-                    </div>
-                    <div class="form-group row">
-                        <button type="submit" class="form-control btn btn-primary" style="width:20ch;">Submit</button>
-                    </div>
-                </form>
-            </div>
+            {% endfor %}
         </form>
     </div>
 </div>
