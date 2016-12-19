@@ -1,0 +1,45 @@
+:root {
+    --colorPrimaryDark: #292f36;
+    --colorPrimary: #4ecdc4;
+    --colorAccent: #ff6b6b;
+    --text: #ffffff;
+    --header: var(--colorAccent);
+    --nav: var(--text);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--colorPrimaryDark);
+    height: 100vh;
+    width: 100vw;
+}
+
+.text {
+    color: var(--text);
+}
+
+.header {
+    color: var(--header) ! important;
+}
+
+.navigation {
+    background-color: var(--nav);
+    font-size: 3vh;
+}
+
+.navbar-brand {
+    font-size: 5vh ! important;
+}
+
+.bg {
+    background-color: var(--colorPrimaryDark);
+}
+
+.blue {
+    color: var(--colorPrimary) ! important;
+}
+
+.dark {
+    color: var(--colorPrimaryDark); ! important;
+}
+

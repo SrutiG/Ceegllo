@@ -1,40 +1,11 @@
 {% extends 'gpacalc/layout.html' %}
 
 {%block content %}
-<nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand col" href="{% url 'home' %}">Ceegllo</a>
-        </div>
-        <div class="navbar-collapse navbar-toggleable-xs" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
-                <li class="nav-item">
-                    <a class="dropdown-toggle" href="{% url 'editcollege' %}"data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">College Info<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{% url 'editcollege' %}">Past Semesters</a></li>
-                        <li><a href="{% url 'editfuture' %}">Future Plan</a></li>
-                        <li><a href="{% url 'currentclasses' %}">Current Semester</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item active dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ username }}<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{% url 'editprofile' %}">Edit Profile</a></li>
-                        <li><a href="{% url 'settings' %}">Settings</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="{% url 'login' %}">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="jumbotron text-center">
-    <h1>Settings</h1>
+<div class="jumbotron text-center bg">
+    <h1 class="header">Settings</h1>
     <form class="form container">
         <div class="form-group row">
-            <label for="gradingScale">Grading Scale: </label>
+            <label class="text" for="gradingScale"><h3>Grading Scale: </h3></label>
             <select id="gradingScale" class="form-control form-control-inline" style="width: 30ch; display: inline-block;">
                 <option>A, B, C, D, F</option>
                 <option>A+, A, A-, B+, B, B-, C+, C, C-, D+, D, D-, F</option>

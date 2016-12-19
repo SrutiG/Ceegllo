@@ -80,8 +80,6 @@ class Student(models.Model):
     def getCurrentSemester(self):
         semester = {}
         semesterObjects = CurrentSemester.objects.all().select_related("semestername").filter(username=self.username)
-        print(semesterObjects)
-        print(semesterObjects[0])
         semester[semesterObjects[0].semestername.__str__] = []
         classObjects = CurrentSemester.objects.all().select_related("classname").filter(username=self.username,
                                                                                         semestername=semesterObjects[0].semestername)
