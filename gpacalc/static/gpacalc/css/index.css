@@ -43,3 +43,8 @@ body {
     color: var(--colorPrimaryDark); ! important;
 }
 
+.axis {
+    stroke: var(--text);
+    fill: var(--text);
+}
+

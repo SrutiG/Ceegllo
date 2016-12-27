@@ -4,18 +4,20 @@
 <div class="jumbotron text-center bg">
     <h1 class="header">Hello {{ name }}!</h1>
     {% if college %}
-        <h2 class="text">{{ college }}</h2>
+        <h2 class="header">{{ college }}</h2>
     {% else %}
         <button class="btn btn-lg btn-default edit-college" type="button" onclick="editCollege()">Add College Information</button>
     {% endif %}
     {% if gpa %}
-        <h3 class="text">GPA: {{ gpa }}</h3>
+        <h3 class="header">GPA: {{ gpa }}</h3>
     {% endif %}
-    <div id="chart" align="center"></div>
+    <div class="jumbotron bg" id="chart" align="center"></div>
 </div>
 
 <script>
     var dataArray = [1, 2.3, 3.3, 3.6, 4.0];
+    var data = {"items":[{"semester":"Spring 2015", "gpa":1}, {"semester":"Summer 2015", "gpa":2.3}, {"semester":"Fall 2015", "gpa":3.3},
+        {"semester":"Spring 2016", "gpa":3.6}, {"semester":"Summer 2016", "gpa":4.0}, {"semester":"Fall 2016", "gpa":2.2}]};
     var width=window.innerWidth/2;
     var height=window.innerHeight/2;
     var barHeight = height/(dataArray.length*1.5);
@@ -28,12 +30,12 @@
 
 
     var widthScale = d3.scale.linear().domain([0, 4]).range([0, width]);
-    var heightScale = d3.scale.linear().domain([yDomain, 0]).range([0, yScaleHeight]);
+    var heightScale = d3.time.scale().range([0, yScaleHeight]);
 
     var colorScale = d3.scale.linear().domain([2, 4]).range(["#4ecdc4", "#ff6b6b"]);
 
     var xAxis = d3.svg.axis().ticks(5).scale(widthScale);
-    var yAxis = d3.svg.axis().ticks(dataArray.length).scale(heightScale);
+    var yAxis = d3.svg.axis().scale(heightScale);
 
     var canvas = d3.select("#chart").append("svg").attr("width", width).attr("height", height)
                     .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -42,8 +44,8 @@
                 .append("rect").attr("width", function(d) { return widthScale(d); }).attr("height", barHeight)
                 .attr("fill", function(d) { return colorScale(d); }).attr("y", function(d, i) { return i * gap; });
 
-    canvas.append("g").attr("transform", "translate(0," +  xTransform + ")").call(xAxis);
-    canvas.append("g").attr("transform", "translate(0,0)").attr("transform", "rotate(90)").call(yAxis);
+    canvas.append("g").attr("transform", "translate(0," +  xTransform + ")").attr("class", "axis").call(xAxis);
+    canvas.append("g").attr("transform", "translate(0,0)").attr("transform", "rotate(90)").attr("class", "axis").call(yAxis);
 
     canvas.append("text")
         .attr("x", (width / 2))
