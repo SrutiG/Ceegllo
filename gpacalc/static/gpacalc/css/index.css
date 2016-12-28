@@ -1,0 +1,76 @@
+:root {
+    --colorPrimaryDark: #292f36;
+    --colorPrimary: #4ecdc4;
+    --colorAccent: #ff6b6b;
+    --text: #ffffff;
+    --header: var(--colorAccent);
+    --nav: var(--text);
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--colorPrimaryDark);
+    height: 100vh;
+    width: 100vw;
+}
+
+.text {
+    color: var(--text);
+}
+
+.header {
+    color: var(--header) ! important;
+}
+
+.navigation {
+    background-color: var(--nav);
+    font-size: 3vh;
+}
+
+.navbar-brand {
+    font-size: 5vh ! important;
+}
+
+.bg {
+    background-color: var(--colorPrimaryDark);
+}
+
+.blue {
+    color: var(--colorPrimary) ! important;
+}
+
+.dark {
+    color: var(--colorPrimaryDark); ! important;
+}
+
+.axis {
+    stroke: var(--text);
+    fill: var(--text);
+}
+
+.main {
+    background-color: var(--nav);
+    background-image: url(../images/gtpano.jpeg);
+    background-position: center;
+    background-size: 100% 100%;
+    opacity: 0.3;
+    height: 56%;
+    width: 100%;
+    margin-top: 0px;
+    position: relative;
+    text-align: center;
+
+}
+
+.main-content {
+    position: absolute;
+    top: 25%;
+    transform: translate(-50%, -28%);
+    left: 50%;
+    margin-right: -50%;
+    background-color: transparent ! important;
+    padding: 1%;
+
+}
+
+

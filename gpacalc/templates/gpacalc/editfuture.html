@@ -1,38 +1,9 @@
 {% extends 'gpacalc/layout.html' %}
 
 {%block content %}
-<nav class="navbar navbar-inverse navbar-static-top">
+<div class="jumbotron text-center bg">
     <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand col" href="{% url 'home' %}">Ceegllo</a>
-        </div>
-        <div class="navbar-collapse navbar-toggleable-xs" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
-                <li class="nav-item active">
-                    <a class="dropdown-toggle" href="{% url 'editcollege' %}"data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">College Info<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{% url 'editcollege' %}">Past Semesters</a></li>
-                        <li><a href="{% url 'editfuture' %}">Future Plan</a></li>
-                        <li><a href="{% url 'currentclasses' %}">Current Semester</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ username }}<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{% url 'editprofile' %}">Edit Profile</a></li>
-                        <li><a href="{% url 'settings' %}">Settings</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="{% url 'login' %}">Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="jumbotron text-center">
-    <div class="container">
-        <h1>Future Plan</h1>
+        <h1 class="header">Future Plan</h1>
         <form class="form container">
             <div class="container semester-future semester-future-template" style="display: none;">
                 <div class="form-group row">
@@ -66,7 +37,7 @@
             </div>
             {% for key, values in semesters.items %}
             <div class="container semester-future">
-                <h3 class="form-header">{{ key }}</h3>
+                <h3 class="form-header text">{{ key }}</h3>
                 <form class="form future-form">
                     {% for item in values %}
                     <div class="form-group row class-future">
