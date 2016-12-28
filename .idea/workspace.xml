@@ -5,6 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpacalc/static/gpacalc/css/index.css" afterPath="$PROJECT_DIR$/gpacalc/static/gpacalc/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpacalc/templates/gpacalc/home.html" afterPath="$PROJECT_DIR$/gpacalc/templates/gpacalc/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gpacalc/templates/gpacalc/layout.html" afterPath="$PROJECT_DIR$/gpacalc/templates/gpacalc/layout.html" />
     </list>
     <ignored path="testDjangoProj.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,28 +48,30 @@
       <file leaf-file-name="layout.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/layout.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
-              <folding />
+            <state relative-caret-position="240">
+              <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+              <folding>
+                <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gpacalc/static/gpacalc/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+            <state relative-caret-position="201">
+              <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="19" column="122" selection-start-line="19" selection-start-column="122" selection-end-line="19" selection-end-column="122" />
+            <state relative-caret-position="270">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -134,8 +137,8 @@
         <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/editprofile.html" />
         <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/settings.html" />
         <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/layout.html" />
-        <option value="$PROJECT_DIR$/gpacalc/static/gpacalc/css/index.css" />
         <option value="$PROJECT_DIR$/gpacalc/templates/gpacalc/home.html" />
+        <option value="$PROJECT_DIR$/gpacalc/static/gpacalc/css/index.css" />
       </list>
     </option>
   </component>
@@ -1193,19 +1196,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/layout.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="39" column="44" selection-start-line="39" selection-start-column="44" selection-end-line="39" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gpacalc/static/gpacalc/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/layout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1217,18 +1222,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpacalc/static/gpacalc/css/index.css">
+    <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gpacalc/templates/gpacalc/home.html">
+    <entry file="file://$PROJECT_DIR$/gpacalc/static/gpacalc/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="19" column="122" selection-start-line="19" selection-start-column="122" selection-end-line="19" selection-end-column="122" />
+        <state relative-caret-position="201">
+          <caret line="55" column="16" selection-start-line="55" selection-start-column="16" selection-end-line="55" selection-end-column="16" />
           <folding />
         </state>
       </provider>

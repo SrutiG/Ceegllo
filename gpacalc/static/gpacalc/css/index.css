@@ -48,3 +48,29 @@ body {
     fill: var(--text);
 }
 
+.main {
+    background-color: var(--nav);
+    background-image: url(../images/gtpano.jpeg);
+    background-position: center;
+    background-size: 100% 100%;
+    opacity: 0.3;
+    height: 56%;
+    width: 100%;
+    margin-top: 0px;
+    position: relative;
+    text-align: center;
+
+}
+
+.main-content {
+    position: absolute;
+    top: 25%;
+    transform: translate(-50%, -28%);
+    left: 50%;
+    margin-right: -50%;
+    background-color: transparent ! important;
+    padding: 1%;
+
+}
+
+
